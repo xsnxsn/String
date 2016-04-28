@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var y = document.getElementsByTagName("input")
+            y[1].onclick = function(){
+                if(detectNum(y[0].value)){
+                    alert("恭喜全是数字")
+                }else {
+                    alert("输入有误")
+                }
+            }
+           function  detectNum(str){
+               var n = 0;
+               for(var i=0; i<str.length;i++){
+                   n = str.charCodeAt(i);
+                   if(n>57||n<48) return false;
+               }
+               return true;
+           }
+
+        }
+    </script>
+</head>
+<body>
+<input type="text" size="30"/>
+<input type="button"/>
+</body>
+</html>
